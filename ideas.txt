@@ -1,0 +1,11 @@
+features :
+
+make different areas for start
+merchant
+make flee chance dependent on mob with a parameter
+make quests
+make a small random to have events playing in the dungeon such as find an item, see a monster and decide to attack or not, find a chest, a hidden way, or a trap
+
+debug :
+
+find why the global variable doesn't work for the save of player's data when going out an in the dungeon
