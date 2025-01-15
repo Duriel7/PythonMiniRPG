@@ -66,70 +66,85 @@ try:
         pass
 
     #Global check variable
+    characterCheck = False
     combatCheck = False
     playCheck = True
     villageCheck = True
     dungeonCheck = True
+    player = {}
+    character = {}
 
     #Player character
-    player = {}
-    player['Name'] = str(input("Enter your name\n"))
+    def characterCreation():
+        
+        #Character creation checker
+        global characterCheck
+        global player
 
-    print("So you are called ", player['Name'])
+        #Player creation
+        player = {}
+        player['Name'] = str(input("What's your name ?\n"))
 
-    player['Inventory'] = []
+        print("So you are called ", player['Name'], ", nice name !")
 
-    player['Coins'] = 0
-    player['XP'] = 0
-    player['Level'] = 1
-    player['Power'] = 1
-    player['Defense'] = 0
-    player['Armor'] = ""
-    player['ArmorDefense'] = 0
-    player['Avoid'] = 0
-    player['Life'] = 100
-    player['MaxLife'] = 100
-    player['Mana'] = 0
-    player['MaxMana'] = 0
-    player['Stamina'] = 50
-    player['MaxStamina'] = 50
-    player['XP'] = 0
-    player['Level'] = 1
-    player['Weapon'] = ""
-    player['WeaponDamage'] = 0
-    player['DamageBonus'] = 0
-    player['DefenseBonus'] = 0
-    player['ClassChoice'] = int(input("Choose your class : 1 for Swordmaster, 2 for Warrior, 3 for Knight, 4 for Archer\n"))
+        player['Inventory'] = []
 
-    #Weapon choice
-    if player['ClassChoice'] == 1:
-        player['Weapon'] = "Sword"
-        player['Armor'] = "Leather Armor"
-        player['WeaponDamage'] = 8
-        player['ArmorDefense'] = 8
-        player['Avoid'] = 10
-        print("You have equipped a sword and a leather armor, you have 10% chance to avoid\n")
-    elif player['ClassChoice'] == 2:
-        player['Weapon'] = "Axe"
-        player['Armor'] = "Iron Armor"
-        player['WeaponDamage'] = 16
-        player['ArmorDefense'] = 16
-        print("You have equipped an axe and an iron armor\n")
-    elif player['ClassChoice'] == 3:
-        player['Weapon'] = "Spear"
-        player['Armor'] = "Boiled Leather Armor"
-        player['WeaponDamage'] = 12
-        player['ArmorDefense'] = 12
-        print("You have equipped a spear and a boiled leather armor\n")
-    elif player['ClassChoice'] == 4:
-        player['Weapon'] = "Bow"
-        player['Armor'] = "Cloth Armor"
-        player['WeaponDamage'] = 6
-        player['Avoid'] = 30
-        print("You have equipped a bow and a cloth armor, you have 0 armor but 30% chance to avoid\n")
-    else:
-        print("Pass here") #Debug
-        pass
+        player['Coins'] = 0
+        player['XP'] = 0
+        player['Level'] = 1
+        player['Power'] = 1
+        player['Defense'] = 0
+        player['Armor'] = ""
+        player['ArmorDefense'] = 0
+        player['Avoid'] = 0
+        player['Life'] = 100
+        player['MaxLife'] = 100
+        player['Mana'] = 0
+        player['MaxMana'] = 0
+        player['Stamina'] = 50
+        player['MaxStamina'] = 50
+        player['XP'] = 0
+        player['Level'] = 1
+        player['Weapon'] = ""
+        player['WeaponDamage'] = 0
+        player['DamageBonus'] = 0
+        player['DefenseBonus'] = 0
+        player['ClassChoice'] = int(input("What are you ? Swordmaster (1), Warrior (2), Knight (3), Archer (4)\n"))
+
+        #Class and equipment choice
+        if player['ClassChoice'] == 1:
+            player['Weapon'] = "Sword"
+            player['Armor'] = "Leather Armor"
+            player['WeaponDamage'] = 8
+            player['ArmorDefense'] = 8
+            player['Avoid'] = 10
+            print("You have equipped a sword and a leather armor, you have 10% chance to avoid\n")
+        elif player['ClassChoice'] == 2:
+            player['Weapon'] = "Axe"
+            player['Armor'] = "Iron Armor"
+            player['WeaponDamage'] = 16
+            player['ArmorDefense'] = 16
+            print("You have equipped an axe and an iron armor\n")
+        elif player['ClassChoice'] == 3:
+            player['Weapon'] = "Spear"
+            player['Armor'] = "Boiled Leather Armor"
+            player['WeaponDamage'] = 12
+            player['ArmorDefense'] = 12
+            print("You have equipped a spear and a boiled leather armor\n")
+        elif player['ClassChoice'] == 4:
+            player['Weapon'] = "Bow"
+            player['Armor'] = "Cloth Armor"
+            player['WeaponDamage'] = 6
+            player['Avoid'] = 30
+            print("You have equipped a bow and a cloth armor, you have 0 armor but 30% chance to avoid\n")
+        else:
+            print("Pass here") #Debug
+            pass
+
+        characterCheck = True
+        village()
+
+        return player
 
     #Define monsters
     mobList = []
@@ -144,7 +159,7 @@ try:
     goblin['XP'] = 10
     goblin['CoinFactor'] = 3
 
-    mobList.append(goblin)
+    #mobList.append(goblin)
 
     hobgoblin = {}
     hobgoblin['Type'] = "Goblinoid"
@@ -156,7 +171,7 @@ try:
     hobgoblin['XP'] = 14
     hobgoblin['CoinFactor'] = 5
 
-    mobList.append(hobgoblin)
+    #mobList.append(hobgoblin)
 
     slime = {}
     slime['Type'] = "Slimy"
@@ -179,9 +194,9 @@ try:
     #Death function
     def death():
         print("You died...")
-        choice = int(input("Wiuld you like to resurrect in the village church ? 1 for yes, 0 for no"))
+        choice = int(input("Would you like to resurrect in the village church ? 1 for yes, 0 for no"))
         if choice == 1:
-            pass #resurrect
+            pass #resurrect()
         elif choice == 2:
             print("You died for good... the character will be deleted...")
             #call delete function for char db
@@ -191,14 +206,18 @@ try:
     #Death function end
 
     #Combat function
-    def combatLoop(monster):
+    def combatLoop(character, monster):
 
-        #Initializing enemy variable
+        #Global variables
+        global combatCheck
+        global player
+
+        #Initializing enemy variables
         monster = random.choice(mobList)
         enemy = monster.copy()
 
-        #Combat checker variable
-        global combatCheck
+        #Initializing player variable
+        player = character
 
         #Storage variable for save purpose
         basePower = player['Power']
@@ -255,7 +274,7 @@ try:
                 print("You chose defense, gained + 50% defense for one turn")
                 print("debug defense :", playerProtection)
             elif choice == 4: #flee
-                print("Try to flee !")
+                print("You flee !")
                 combatCheck = True
                 break
             
@@ -298,21 +317,34 @@ try:
                             player['Life'] = max((player['Life'] - monsterDamage), 0)
                         else:
                             monsterDamage = 0
-                            print("You avoided the attack")
+                            print("You avoided the attack !")
                     else:
                         #Mob successfully flees, combat ends
                         print("The ", enemy['Name'], " flees !")
                         combatCheck = True
                         break
-                else:
+                elif enemy['Life'] <= 0:
                     #If enemy dies exit system and indicate to player
                     print("You have vanquished the enemy")
                     combatCheck = True
-                    player['XP'] += goblin['XP']
-                    print("You have gained ", int(enemy['XP']), " XP points, and have ", int(player['XP']), " XP points")
+                    player['XP'] += enemy['XP']
+                    print("You have gained ", int(enemy['XP']), " XP points, and have ", int(player['XP']), " XP points.")
                     gainedCoins = 1 + round(coinsRandom * enemy['CoinFactor'])
                     player['Coins'] += gainedCoins
-                    print("You also gained ", gainedCoins, " coins !" )
+                    print("You also gained ", gainedCoins, " coins for a total of ",  player['Coins'], " coins !" )
+            
+        #Loop relaunch on order by the player
+        print("You may continue to explore the dungeon.")
+        choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+        if choice == 1:
+            print("You continue exploring a little more...")
+            combatCheck = False
+            player = dungeon(player)
+        elif choice == 2:
+            print("You prefer to exit the dungeon for a while...")
+            game()
+            combatCheck = False
+            player = dungeon(player)
                     
             #Loop resumes
 
@@ -329,8 +361,11 @@ try:
         #Choice variable
         choice = 0
 
+        villageCheck = True
+
         while villageCheck == True:
-            choice = int(input("What do you want to do in the village ? 1 to shop, 2 to go to the tavern, 3 to go to the guild, 4 to go to the church, 0 to quit"))
+            print("What do you want to do in the village ?")
+            choice = int(input(" Shop (1), Tavern (2), Guild (3), Church (4), Exit (0)\n"))
 
             #Village - player decision tree
             if choice == 1:
@@ -349,15 +384,14 @@ try:
                 church()
             elif choice == 0:
                 #Chose to quit village
-                print("Exciting village...")
+                print("Exiting village...")
                 villageCheck = False
-                
     #Village function end
 
     #Village shops function
     def shops():
         print("What shop do you want to visit ?")
-        choice = int(input("Available shops are : Armory (1), Jewelry (2), Alchemist (3), General store (4), Exit (0)"))
+        choice = int(input("Available shops are : Armory (1), Jewelry (2), Alchemist (3), General store (4), Exit (0)\n"))
         if choice == 1:
             #Visit armory
             armory()
@@ -382,7 +416,7 @@ try:
 
     #Function for armory
     def armory():
-        choice = int(input("Do you want to buy (1) or sell (2) ? 0 to quit"))
+        choice = int(input("Do you want to buy (1) or sell (2) ? 0 to quit\n"))
         if choice == 1:
             pass #buy
         elif choice == 2:
@@ -395,7 +429,7 @@ try:
 
     #Function for jewelry
     def jewelry():
-        choice = int(input("Do you want to buy (1) or sell (2) ? 0 to quit"))
+        choice = int(input("Do you want to buy (1) or sell (2) ? 0 to quit\n"))
         if choice == 1:
             pass #buy
         elif choice == 2:
@@ -408,7 +442,7 @@ try:
 
     #Function for alchemist
     def alchemist():
-        choice = int(input("Do you want to heal (1), buy (2) or sell (3) ? 0 to quit"))
+        choice = int(input("Do you want to heal (1), buy (2) or sell (3) ? 0 to quit\n"))
         if choice == 1:
             pass #heal
         elif choice == 2:
@@ -423,7 +457,7 @@ try:
 
     #Function for general store
     def generalStore():
-        choice = int(input("Do you want to buy (1) or sell (2) ? 0 to quit"))
+        choice = int(input("Do you want to buy (1) or sell (2) ? 0 to quit\n"))
         if choice == 1:
             pass #buy
         elif choice == 2:
@@ -436,7 +470,7 @@ try:
 
     #Function for tavern
     def tavern():
-        choice = int(input("You can : Listen to rumors (1), Shop for food (2), Rent a room (3), Exit (0)"))
+        choice = int(input("You can : Listen to rumors (1), Shop for food (2), Rent a room (3), Exit (0)\n"))
         if choice == 1:
             #Chose rumors
             rumors()
@@ -445,7 +479,7 @@ try:
             foodShop()
         elif choice == 3:
             #Chose rest - all stats are regen to max 75%
-            choice = int(input("Rest effectivness is 75% max, do you want to rent the room (1 yes or 0 no) ?"))
+            choice = int(input("Rest effectivness is 75% max, do you want to rent the room (1 yes or 0 no) ?\n"))
             if choice == 1:
                 rest()
             elif choice == 0:
@@ -465,7 +499,7 @@ try:
 
     #Function for food shopping
     def foodShop():
-        choice = int(input("Do you want to buy (1) or sell (2) ? Exit (0)"))
+        choice = int(input("Do you want to buy (1) or sell (2) ? Exit (0)\n"))
         if choice == 1:
             pass #buy food
         elif choice == 2:
@@ -478,7 +512,7 @@ try:
 
     #Function for the guild
     def guild():
-        choice = int(input("Available services are : Look for quests (1), Shop for food (2), Go to your room (3), Talk with people (4), Exit (0)"))
+        choice = int(input("Available services are : Look for quests (1), Shop for food (2), Go to your room (3), Talk with people (4), Exit (0)\n"))
         if choice == 1:
             #Chose quests
             print("What quests are available... ?")
@@ -500,7 +534,7 @@ try:
     #Function for church
     def church():
         print("Welcome to the church, what do you want to do ?")
-        choice = int(input("We offer those services : 1 to pray a god, 2 to receive a boon, 3 to remove a curse, 4 to buy holy water, 5 to save, 0 to quit"))
+        choice = int(input("We offer those services : Pray to a god (1), Receive a boon (2), Remove a curse (3), Buy holy water (4), Save (5), Exit (0)\n"))
         if choice == 1:
             #Chose prayer
             print("What god to pray... ?")
@@ -511,6 +545,12 @@ try:
         elif choice == 3:
             #Chose curse removal
             pass #call curseRemoval()
+        elif choice == 4:
+            #Chose buy holy water
+            pass #call buyHolyWater()
+        elif choice == 5:
+            #Chose save
+            pass #call saveGame()
         elif choice == 0:
             pass #quit shopping
             village()
@@ -535,10 +575,16 @@ try:
     #Rest end
 
     #Dungeon function
-    def dungeon():
-        while player['Life'] > 0 and combatCheck == False:
-            combatLoop(mobList)
+    def dungeon(character):
 
+        #Resetting global combat checker
+        global combatCheck
+        combatCheck = False
+
+        while combatCheck == False:
+            combatLoop(character, mobList)
+        
+        return character
 
     #Dongeon function end
 
@@ -547,6 +593,28 @@ try:
         pass #call delete or other db functions
     #Options end
 
+    #Function to welcome player
+    def welcome():
+
+        choice = int(input("Welcome to the Elder Stones game, do you want to create a new character (1) or load an existing one (2) ? Use 0 to quit game !\n"))
+
+        if choice == 1:
+            #Create a character
+            print("So you're a new adventurer here. How about you ? Give us some details about yourself.")
+            character = characterCreation()
+        elif choice == 2:
+            #character = db character
+            pass #load char from save
+        elif choice == 0:
+            print("Quitting game...")
+            sys.exit()
+        else:
+            print("Wrong choice, quitting game...")
+            sys.exit()
+
+        return character
+        
+    #Welcome end
     def game():
         
         #Call database functions
@@ -556,21 +624,28 @@ try:
         
         #Play checker variable
         global playCheck
+        global character
+        global characterCheck
 
         #Choice variable
         choice = 0
+
+        #Call welcome function
+        if characterCheck == False:
+            character = welcome()
+            characterCheck = True
 
         #Game loop
         while playCheck == True:
             print("What do you want to do ?")
             choice = int(input("Enter village (1), Explore surroundings (2), Explore dungeon (3), Additional options (4), Quit game (0)\n"))
             if choice == 1:
-                while villageCheck == True:
-                    village()
+                village()
             elif choice == 2:
                 pass
             elif choice == 3:
-                dungeon()
+                print("Be cautious exploring the dungeon...")
+                dungeon(character)
             elif choice == 4:
                 pass #delete save, modify settings, other things
                 options()

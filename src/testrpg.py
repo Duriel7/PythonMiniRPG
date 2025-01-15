@@ -577,6 +577,10 @@ try:
     #Dungeon function
     def dungeon(character):
 
+        #Resetting global combat checker
+        global combatCheck
+        combatCheck = False
+
         while combatCheck == False:
             combatLoop(character, mobList)
         
