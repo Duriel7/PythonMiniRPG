@@ -10,4 +10,14 @@ make semi random champions and elites spawns
 make around village exploration richer, find items, encounter merchants, being ambushed
 make choices done by key presses instead of typing a enter each time
 
+exploration feature :
+integration wanted : exploration => combat OR merchant OR find item OR find place...
+
+combat feature :
+make comabt decisions based on character class
+
+transform :
+dungeon function to have choice which then leads to other functions
+exploration function to be the same
+
 debug :

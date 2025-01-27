@@ -206,6 +206,47 @@ try:
             print("Not a good choice")
     #Death function end
 
+    #Exploration function
+    def explorationLoop(character):
+    
+        #Global variables
+        global explorationCheck
+        global player
+
+        #Initializing player variable
+        player = character
+
+        while explorationCheck == True:
+
+            #Initializing random numbers for events purpose
+            explorationRandom = random.randint(0, 5)
+
+            #Declare variables for exploration
+            choice = 0
+            explo = 1 + explorationRandom
+
+            if explo == 1:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                else:
+                    pass
+            elif explo == 2:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+            elif explo == 3:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+            elif explo == 4:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+            elif explo == 5:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+            elif explo == 6:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+
+        
+    #Exploration function end
+    
     #Combat function
     def combatLoop(character, monster):
 
@@ -582,9 +623,8 @@ try:
         global explorationCheck
         explorationCheck = True
 
-        while combatCheck == True:
-            #some function to loop on exploration events, find, ambush, encounter...
-            pass
+        while explorationCheck == True:
+            exploration(character)
         
         return character
 
@@ -634,6 +674,7 @@ try:
     def game():
         
         #Call database functions
+        #put these in a conditional choice depending on if they have been made or not within the save file
         databaseSaves()
         databaseWeapons()
         databaseArmors()
