@@ -68,6 +68,7 @@ try:
     #Global check variable
     characterCheck = False
     combatCheck = False
+    explorationCheck = False
     playCheck = True
     villageCheck = True
     dungeonCheck = True
@@ -575,6 +576,21 @@ try:
     #Rest end
 
     #Dungeon function
+    def exploration(character):
+
+        #Resetting global combat checker
+        global explorationCheck
+        explorationCheck = True
+
+        while combatCheck == True:
+            #some function to loop on exploration events, find, ambush, encounter...
+            pass
+        
+        return character
+
+    #Dongeon function end
+
+    #Dungeon function
     def dungeon(character):
 
         #Resetting global combat checker
@@ -642,7 +658,8 @@ try:
             if choice == 1:
                 village()
             elif choice == 2:
-                pass
+                print("You go for a little tour around the plains...")
+                exploration(character)
             elif choice == 3:
                 print("Be cautious exploring the dungeon...")
                 dungeon(character)
