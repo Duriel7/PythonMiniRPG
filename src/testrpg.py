@@ -226,23 +226,78 @@ try:
             explo = 1 + explorationRandom
 
             if explo == 1:
+                #Find an item
                 choice = int(input("Continue exploring (1) or go out (2) ?\n"))
                 if choice == 1:
                     explorationLoop(player)
                 elif choice == 2:
                     explorationCheck = False
+                    village()
                 else:
-                    pass
+                    explorationCheck = False
+                    village()
             elif explo == 2:
+                #Monster ambush
                 choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                    village()
+                else:
+                    explorationCheck = False
+                    village()
             elif explo == 3:
-                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                #See a monster from a distance
+                monster = random.choice(mobList).copy()
+                print("You see a monster, but it do not seem to see you, it appears to be a ", monster['Name'])
+                choice = int(input("Do you wish to fight this ", monster['Name'], " Yes (1), No (2) ?"))
+                if choice == 1:
+                    combatLoop(player, monster)
+                elif choice == 2:
+                    choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                    if choice == 1:
+                        explorationLoop(player)
+                    elif choice == 2:
+                        explorationCheck = False
+                        village()
+                    else:
+                        explorationCheck = False
+                        village()
+                else:
+                    print("Wrong choice, continuig exploration...")
+                    explorationLoop(player)
+                    
             elif explo == 4:
                 choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                    village()
+                else:
+                    explorationCheck = False
+                    village()
             elif explo == 5:
                 choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                    village()
+                else:
+                    explorationCheck = False
+                    village()
             elif explo == 6:
                 choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                    village()
+                else:
+                    explorationCheck = False
+                    village()
 
         
     #Exploration function end

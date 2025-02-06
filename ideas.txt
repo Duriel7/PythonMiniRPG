@@ -19,9 +19,12 @@ make a small random to have events playing in the dungeon such as find an item, 
 
 combat feature :
 make combat decisions based on character class
+make subfunctions for combat turns so I can decide for initiative from the player or from the monster
+make another function for choosen combat when the exploration function gives the monster itself, which will call subfunctions
+make an arena system with opponent lists (raised monsters, human classes) with another combat function called arena
 
 transform :
 dungeon function to have choice which then leads to other functions
-exploration function to be the same
+exploration function to be different depending on environment around villages
 
 debug :
