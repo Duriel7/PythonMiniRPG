@@ -68,6 +68,7 @@ try:
     #Global check variable
     characterCheck = False
     combatCheck = False
+    explorationCheck = False
     playCheck = True
     villageCheck = True
     dungeonCheck = True
@@ -205,6 +206,47 @@ try:
             print("Not a good choice")
     #Death function end
 
+    #Exploration function
+    def explorationLoop(character):
+    
+        #Global variables
+        global explorationCheck
+        global player
+
+        #Initializing player variable
+        player = character
+
+        while explorationCheck == True:
+
+            #Initializing random numbers for events purpose
+            explorationRandom = random.randint(0, 5)
+
+            #Declare variables for exploration
+            choice = 0
+            explo = 1 + explorationRandom
+
+            if explo == 1:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                else:
+                    pass
+            elif explo == 2:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+            elif explo == 3:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+            elif explo == 4:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+            elif explo == 5:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+            elif explo == 6:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+
+        
+    #Exploration function end
+    
     #Combat function
     def combatLoop(character, monster):
 
@@ -559,6 +601,11 @@ try:
             village()
     #Church end
 
+    #Resurrection function
+    def resurrection(character):
+        pass
+    #End of resurrection function
+
     #Function for rumors
     def rumors():
         pass
@@ -573,6 +620,20 @@ try:
     def rest():
         pass
     #Rest end
+
+    #Dungeon function
+    def exploration(character):
+
+        #Resetting global combat checker
+        global explorationCheck
+        explorationCheck = True
+
+        while explorationCheck == True:
+            exploration(character)
+        
+        return character
+
+    #Dongeon function end
 
     #Dungeon function
     def dungeon(character):
@@ -618,6 +679,7 @@ try:
     def game():
         
         #Call database functions
+        #put these in a conditional choice depending on if they have been made or not within the save file
         databaseSaves()
         databaseWeapons()
         databaseArmors()
@@ -642,7 +704,8 @@ try:
             if choice == 1:
                 village()
             elif choice == 2:
-                pass
+                print("You go for a little tour around the plains...")
+                exploration(character)
             elif choice == 3:
                 print("Be cautious exploring the dungeon...")
                 dungeon(character)

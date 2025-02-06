@@ -601,6 +601,11 @@ try:
             village()
     #Church end
 
+    #Resurrection function
+    def resurrection(character):
+        pass
+    #End of resurrection function
+
     #Function for rumors
     def rumors():
         pass

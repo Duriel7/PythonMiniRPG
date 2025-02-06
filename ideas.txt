@@ -4,17 +4,21 @@ make different areas for start
 merchant
 make flee chance dependent on mob with a parameter (eg : speed or agility)
 make quests
-make a small random to have events playing in the dungeon such as find an item, see a monster and decide to attack or not, find a chest, a hidden way, or a trap
 make floors for the dungeon with floor bosses
 make semi random champions and elites spawns
 make around village exploration richer, find items, encounter merchants, being ambushed
 make choices done by key presses instead of typing a enter each time
 
+save feature :
+save the boolean for creation and feeding of databases
+save characters by player and one folder containing all the save file for each player
+
 exploration feature :
 integration wanted : exploration => combat OR merchant OR find item OR find place...
+make a small random to have events playing in the dungeon such as find an item, see a monster and decide to attack or not, find a chest, a hidden way, or a trap
 
 combat feature :
-make comabt decisions based on character class
+make combat decisions based on character class
 
 transform :
 dungeon function to have choice which then leads to other functions
