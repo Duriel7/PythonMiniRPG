@@ -27,4 +27,7 @@ transform :
 dungeon function to have choice which then leads to other functions
 exploration function to be different depending on environment around villages
 
+final before continuig dev :
+=> separate functions into files
+
 debug :
