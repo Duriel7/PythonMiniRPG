@@ -238,6 +238,9 @@ try:
                     village()
             elif explo == 2:
                 #Monster ambush
+                monster = random.choice(mobList).copy()
+                print("You are ambushed by a ", monster['Name'], " !")
+                combatLoop(player, monster)
                 choice = int(input("Continue exploring (1) or go out (2) ?\n"))
                 if choice == 1:
                     explorationLoop(player)
@@ -250,7 +253,7 @@ try:
             elif explo == 3:
                 #See a monster from a distance
                 monster = random.choice(mobList).copy()
-                print("You see a monster, but it do not seem to see you, it appears to be a ", monster['Name'])
+                print("You see a monster, but it does not seem to see you, it appears to be a ", monster['Name'])
                 choice = int(input("Do you wish to fight this ", monster['Name'], " Yes (1), No (2) ?"))
                 if choice == 1:
                     combatLoop(player, monster)
