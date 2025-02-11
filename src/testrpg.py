@@ -227,6 +227,10 @@ try:
 
             if explo == 1:
                 #Find an item
+                print("You stumble upon an item on the floor, what is that ?")
+                #make lists : 
+                #one list for all item where the only property is type : weapon, armor, aid...
+                #another one for each item type with according properties
                 choice = int(input("Continue exploring (1) or go out (2) ?\n"))
                 if choice == 1:
                     explorationLoop(player)
@@ -270,7 +274,6 @@ try:
                 else:
                     print("Wrong choice, continuig exploration...")
                     explorationLoop(player)
-                    
             elif explo == 4:
                 choice = int(input("Continue exploring (1) or go out (2) ?\n"))
                 if choice == 1:

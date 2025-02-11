@@ -8,6 +8,7 @@ make floors for the dungeon with floor bosses
 make semi random champions and elites spawns
 make around village exploration richer, find items, encounter merchants, being ambushed
 make choices done by key presses instead of typing a enter each time
+randomize some properties like power or health points
 
 save feature :
 save the boolean for creation and feeding of databases
