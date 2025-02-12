@@ -1,69 +1,11 @@
-import random, math, sys, sqlite3
+import random, math, sys
+from database_connection import dbconnect, dbcursor, dberror, dbclose
+from database_feed import *
 
 try:
-    #Connection to database
-    connection = sqlite3.connect('database/RPG_Database.db')
-    cursor = connection.cursor()
 
-    #Database tables creation functions
-    def databaseSaves():
-        
-        #Create saves table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS saves(
-                id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-                characterName TEXT,
-                characterLevel INTEGER,
-                characterXP INTEGER
-            )
-        """)
-        connection.commit()
-    
-    def databaseItems():
-        pass
-
-    def databaseWeapons():
-        
-        #Create weapons table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS weapons(
-                id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-                weaponName TEXT,
-                weaponType TEXT,
-                weaponRank TEXT,
-                weaponLevel INTEGER,
-                weaponPrice INTEGER
-            )
-        """)
-        connection.commit()
-        
-    def databaseArmors():
-        
-        #Create armors table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS armors(
-                id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-                armorName TEXT,
-                armorType TEXT,
-                armorRank TEXT,
-                armorLevel INTEGER,
-                armorPrice INTEGER
-            )
-        """)
-        connection.commit()
-
-    def databasePotions():
-        pass
-
-    def databaseIngredients():
-        pass
-
-    def databaseMonsters():
-        pass
-
-    #Database tables update functions
-    def databaseSaveCreation():
-        pass
+    dbconnect()
+    dbcursor()
 
     #Global check variable
     characterCheck = False
@@ -785,8 +727,7 @@ try:
     game()
 
 except Exception as error:
-    print("Error ", error)
-    connection.rollback()
+    dberror(error)
 
 finally:
-    connection.close()
+    dbclose()

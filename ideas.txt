@@ -1,9 +1,9 @@
 features :
 
 make different areas for start
-merchant
+merchants
 make flee chance dependent on mob with a parameter (eg : speed or agility)
-make quests
+make quests procedurally generated
 make floors for the dungeon with floor bosses
 make semi random champions and elites spawns
 make around village exploration richer, find items, encounter merchants, being ambushed
@@ -11,7 +11,7 @@ make choices done by key presses instead of typing a enter each time
 randomize some properties like power or health points
 
 save feature :
-save the boolean for creation and feeding of databases
+save the boolean for creation and feeding of databases => python file or external file ?
 save characters by player and one folder containing all the save file for each player
 
 exploration feature :

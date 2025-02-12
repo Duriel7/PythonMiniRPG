@@ -2,13 +2,13 @@ import random, math, sys
 from database_connection import *
 
 try:
-    #Call database connection
-    cursor = dbconnect()
 
     #Database tables creation functions
     def databaseSaves():
         
-        global cursor
+        #Calling needed variables from databse connection file
+        connection = dbconnect()
+        cursor = dbcursor()
         
         #Create saves table
         cursor.execute("""
@@ -26,6 +26,10 @@ try:
 
     def databaseWeapons():
         
+        #Calling needed variables from databse connection file
+        connection = dbconnect()
+        cursor = dbcursor()
+        
         #Create weapons table
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS weapons(
@@ -40,6 +44,10 @@ try:
         connection.commit()
         
     def databaseArmors():
+        
+        #Calling needed variables from databse connection file
+        connection = dbconnect()
+        cursor = dbcursor()
         
         #Create armors table
         cursor.execute("""
