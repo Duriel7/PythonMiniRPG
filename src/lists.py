@@ -1,9 +1,13 @@
-import random, math, sys
+import random, math, sys, copy
 from database_feed import *
 
 #This file will contain all items lists that will be needed for the game
 
 #General lists
+mobList = []
+jobList = []
+classList = []
+
 
     #Characters
 
@@ -12,24 +16,49 @@ humanList = []
 
         #Monsters
             #Species and Races
+#Humanoids
 humanoidList = []
-corruptedHumans = []
+corruptedHumanList = []
 corruptedElfList = []
 corruptedDwarfList = []
+#Append in humanoids list
+humanoidList.append(corruptedHumanList)
+humanoidList.append(corruptedElfList)
+humanoidList.append(corruptedDwarfList)
 
+#Pseudhumanoids
 pseudoHumanoidList = []
 goblinoidList = []
 orcoidList = []
 ogreList = []
+#Append in pseudohumanoids list
+pseudoHumanoidList.append(goblinoidList)
+pseudoHumanoidList.append(orcoidList)
+pseudoHumanoidList.append(ogreList)
 
+#Undead
 undeadList = []
 vampireList = []
 zombieList = []
 ghostList = []
-
+#Append in undead list
+undeadList.append(vampireList)
+undeadList.append(zombieList)
+undeadList.append(ghostList)
 
             #Individual monsters
-            
+#Goblins and Goblinoids
+
+
+goblin = {}
+goblin['Type'] = "Goblinoid"
+goblin['Name'] = "Goblin"
+goblin['Power'] = 12
+goblin['Defense'] = 2
+goblin['Life'] = 50
+goblin['MaxLife'] = 50
+goblin['XP'] = 10
+goblin['CoinFactor'] = 3
 
         #Pets
 

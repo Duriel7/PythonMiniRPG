@@ -1,4 +1,4 @@
-import random, math, sys
+import random, math, sys, copy
 from database_connection import dbconnect, dbcursor, dberror, dbclose
 from database_feed import *
 from lists import *
@@ -91,7 +91,6 @@ try:
         return player
 
     #Define monsters
-    mobList = []
 
     goblin = {}
     goblin['Type'] = "Goblinoid"

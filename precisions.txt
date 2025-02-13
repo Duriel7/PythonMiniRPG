@@ -1,7 +1,9 @@
 human list :
 
 humanoid list :
-corrupted humans, corrupted elves, corrupted dwarves, 
+corrupted humans => will have some human origins and different levels and ranks
+corrupted elves => dark, high, wood, blood (unique to corrupted ones), crystal (crystal elves are elves imprisoned in stone by an ancient curse, end game enemy)
+corrupted dwarves => deep, high, forest, blood (same as elves counterpart), crystal (same)
 
 vampire list :
 
