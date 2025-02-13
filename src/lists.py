@@ -8,8 +8,28 @@ from database_feed import *
     #Characters
 
         #NPC human
+humanList = []
 
         #Monsters
+            #Species and Races
+humanoidList = []
+corruptedHumans = []
+corruptedElfList = []
+corruptedDwarfList = []
+
+pseudoHumanoidList = []
+goblinoidList = []
+orcoidList = []
+ogreList = []
+
+undeadList = []
+vampireList = []
+zombieList = []
+ghostList = []
+
+
+            #Individual monsters
+            
 
         #Pets
 
