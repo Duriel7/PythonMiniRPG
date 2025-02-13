@@ -46,12 +46,19 @@ undeadList.append(vampireList)
 undeadList.append(zombieList)
 undeadList.append(ghostList)
 
+#Slimy
+slimyList = []
+slimelist = []
+#Append in slimy list
+slimyList.append(slimelist)
+
             #Individual monsters
 #Goblins and Goblinoids
 
 goblinTemplate = {}
 goblinTemplate['Type'] = "Goblinoid"
 goblinTemplate['Name'] = "Default"
+goblinTemplate['Rank'] = 1
 goblinTemplate['Power'] = 0
 goblinTemplate['Defense'] = 0
 goblinTemplate['Life'] = 1
@@ -66,7 +73,15 @@ goblin['Defense'] = 2
 goblin['Life'] = 50
 goblin['MaxLife'] = 50
 
-print(goblinTemplate, " ", goblin)
+hobgoblin = {}
+hobgoblin['Name'] = "Hobgoblin"
+goblinTemplate['Rank'] = 2
+hobgoblin['Power'] = 16
+hobgoblin['Defense'] = 4
+hobgoblin['Life'] = 60
+hobgoblin['MaxLife'] = 60
+hobgoblin['XP'] = 14
+hobgoblin['CoinFactor'] = 5
 
         #Pets
 
