@@ -49,16 +49,24 @@ undeadList.append(ghostList)
             #Individual monsters
 #Goblins and Goblinoids
 
+goblinTemplate = {}
+goblinTemplate['Type'] = "Goblinoid"
+goblinTemplate['Name'] = "Default"
+goblinTemplate['Power'] = 0
+goblinTemplate['Defense'] = 0
+goblinTemplate['Life'] = 1
+goblinTemplate['MaxLife'] = 1
+goblinTemplate['XP'] = 10
+goblinTemplate['CoinFactor'] = 3
 
-goblin = {}
-goblin['Type'] = "Goblinoid"
+goblin = copy.deepcopy(goblinTemplate)
 goblin['Name'] = "Goblin"
 goblin['Power'] = 12
 goblin['Defense'] = 2
 goblin['Life'] = 50
 goblin['MaxLife'] = 50
-goblin['XP'] = 10
-goblin['CoinFactor'] = 3
+
+print(goblinTemplate, " ", goblin)
 
         #Pets
 
