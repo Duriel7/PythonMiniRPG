@@ -12,6 +12,18 @@ classList = []
 
     #Characters
 
+#Base global Template
+baseNPCTemplate = {}
+baseNPCTemplate['Hostility'] = "Neutral"
+baseNPCTemplate['Species'] = "Default"
+baseNPCTemplate['Type'] = "Default"
+baseNPCTemplate['Name'] = "Default"
+baseNPCTemplate['Rank'] = 0
+baseNPCTemplate['Power'] = 0
+baseNPCTemplate['Defense'] = 0
+baseNPCTemplate['Life'] = 1
+baseNPCTemplate['MaxLife'] = 1
+
         #NPC human
 humanList = []
 
@@ -48,6 +60,9 @@ undeadList.append(vampireList)
 undeadList.append(zombieList)
 undeadList.append(ghostList)
 
+#Demons
+#Append in demons list
+
 #Slimy
 slimyList = []
 slimelist = []
@@ -55,16 +70,31 @@ slimelist = []
 slimyList.append(slimelist)
 
             #Individual monsters
-#Goblins and Goblinoids
+
+#Global Template
+baseMonster = {}
+baseMonster['Hostility'] = "Hostile"
+baseMonster['Species'] = "Default"
+baseMonster['Type'] = "Monster"
+baseMonster['Name'] = "Default"
+baseMonster['Rank'] = 1
+baseMonster['Power'] = 0
+baseMonster['Defense'] = 0
+baseMonster['Life'] = 1
+baseMonster['MaxLife'] = 1
+baseMonster['XP'] = 0
+baseMonster['CoinFactor'] = 0
+
+#Humanoids
+
+#Pseudo Humanoids
+
+    #Goblins and Goblinoids
 
 goblinTemplate = {}
+goblinTemplate['Species'] = "PseudoHumanoid"
 goblinTemplate['Type'] = "Goblinoid"
 goblinTemplate['Name'] = "Default"
-goblinTemplate['Rank'] = 1
-goblinTemplate['Power'] = 0
-goblinTemplate['Defense'] = 0
-goblinTemplate['Life'] = 1
-goblinTemplate['MaxLife'] = 1
 goblinTemplate['XP'] = 10
 goblinTemplate['CoinFactor'] = 3
 
@@ -90,6 +120,14 @@ hobgoblin['CoinFactor'] = 5
 
 goblinoidList.append(hobgoblin)
 mobList.append(hobgoblin)
+
+print(baseNPCTemplate)
+print(baseMonster)
+print(goblinTemplate)
+print(goblin)
+print(hobgoblin)
+
+#Undead
 
         #Pets
 
