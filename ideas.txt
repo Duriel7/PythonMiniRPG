@@ -29,6 +29,11 @@ npc feature :
 random npc : names, surnames, nicknames, origin (country, continent, city), specialization (job, class), personalities
 make dictionaries for each characteristic
 
+statistics feature :
+add stats to character templates and definitions
+differenciate main and secondary stats
+derived stats formulas => 
+
 transform :
 dungeon function to have choice which then leads to other functions
 exploration function to be different depending on environment around villages

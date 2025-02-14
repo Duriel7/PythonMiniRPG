@@ -72,18 +72,18 @@ slimyList.append(slimelist)
             #Individual monsters
 
 #Global Template
-baseMonster = {}
-baseMonster['Hostility'] = "Hostile"
-baseMonster['Species'] = "Default"
-baseMonster['Type'] = "Monster"
-baseMonster['Name'] = "Default"
-baseMonster['Rank'] = 1
-baseMonster['Power'] = 0
-baseMonster['Defense'] = 0
-baseMonster['Life'] = 1
-baseMonster['MaxLife'] = 1
-baseMonster['XP'] = 0
-baseMonster['CoinFactor'] = 0
+baseMonsterTemplate = copy.deepcopy(baseNPCTemplate)
+baseMonsterTemplate['Hostility'] = "Hostile"
+baseMonsterTemplate['Species'] = "Default"
+baseMonsterTemplate['Type'] = "Monster"
+baseMonsterTemplate['Name'] = "Default"
+baseMonsterTemplate['Rank'] = 1
+baseMonsterTemplate['Power'] = 0
+baseMonsterTemplate['Defense'] = 0
+baseMonsterTemplate['Life'] = 1
+baseMonsterTemplate['MaxLife'] = 1
+baseMonsterTemplate['XP'] = 0
+baseMonsterTemplate['CoinFactor'] = 0
 
 #Humanoids
 
@@ -91,7 +91,7 @@ baseMonster['CoinFactor'] = 0
 
     #Goblins and Goblinoids
 
-goblinTemplate = {}
+goblinTemplate = copy.deepcopy(baseMonsterTemplate)
 goblinTemplate['Species'] = "PseudoHumanoid"
 goblinTemplate['Type'] = "Goblinoid"
 goblinTemplate['Name'] = "Default"
@@ -121,11 +121,11 @@ hobgoblin['CoinFactor'] = 5
 goblinoidList.append(hobgoblin)
 mobList.append(hobgoblin)
 
-print(baseNPCTemplate)
-print(baseMonster)
-print(goblinTemplate)
-print(goblin)
-print(hobgoblin)
+print("base NPC : ", baseNPCTemplate)
+print("base monster : ", baseMonsterTemplate)
+print("goblin template : ", goblinTemplate)
+print("goblin : ", goblin)
+print("hob : ", hobgoblin)
 
 #Undead
 
