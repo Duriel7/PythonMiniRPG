@@ -4,10 +4,11 @@ from database_feed import *
 #This file will contain all items lists that will be needed for the game
 
 #General lists
+speciesList = []
 mobList = []
+mobSpeciesList = []
 jobList = []
 classList = []
-
 
     #Characters
 
@@ -42,6 +43,7 @@ vampireList = []
 zombieList = []
 ghostList = []
 #Append in undead list
+humanoidList.append(undeadList)
 undeadList.append(vampireList)
 undeadList.append(zombieList)
 undeadList.append(ghostList)
@@ -73,15 +75,21 @@ goblin['Defense'] = 2
 goblin['Life'] = 50
 goblin['MaxLife'] = 50
 
-hobgoblin = {}
+goblinoidList.append(goblin)
+mobList.append(goblin)
+
+hobgoblin = copy.deepcopy(goblinTemplate)
 hobgoblin['Name'] = "Hobgoblin"
-goblinTemplate['Rank'] = 2
+hobgoblin['Rank'] = 2
 hobgoblin['Power'] = 16
 hobgoblin['Defense'] = 4
 hobgoblin['Life'] = 60
 hobgoblin['MaxLife'] = 60
 hobgoblin['XP'] = 14
 hobgoblin['CoinFactor'] = 5
+
+goblinoidList.append(hobgoblin)
+mobList.append(hobgoblin)
 
         #Pets
 
