@@ -24,6 +24,8 @@ slime => slime (base), glutton slime, plant slime, carrion slime, poison slime, 
 mud => animated mud, muddy corpse (undead too)
 gel => 
 
+*************************************************************************
+
 STATS :
 
 main :

@@ -3,18 +3,35 @@ from database_feed import *
 
 #This file will contain all items lists that will be needed for the game
 
-#General lists
+#################################################################################################
+#                                         GENERAL LISTS                                         #
+#################################################################################################
+
 speciesList = []
 mobList = []
 mobSpeciesList = []
+
 jobList = []
 classList = []
+
 originHumanList = []
 originMonsterList = []
+
 cityList = []
 countryList = []
 continentList = []
 environmentTypeList = []
+
+mobPlainsList = []
+mobForestList = []
+mobCaveList = []
+mobDesertList = []
+mobSnowList = []
+mobMountainsList = []
+mobRiverList = []
+mobLakeList = []
+mobSeaList = []
+mobSkyList = []
 
 #Append origin sublists in main lists
 originHumanList.append(cityList)
@@ -114,10 +131,13 @@ crossbowList = []
 
             #Potions
 
-#General Templates
+#################################################################################################
+#                                       GENERAL TEMPLATES                                       #
+#################################################################################################
 
     #Base global NPC Template
 baseNPCTemplate = {}
+baseNPCTemplate['Origin'] = "None"
 baseNPCTemplate['Hostility'] = "Neutral"
 baseNPCTemplate['Species'] = "Default"
 baseNPCTemplate['Type'] = "Default"
@@ -130,21 +150,20 @@ baseNPCTemplate['MaxLife'] = 1
 
     #Characters
 
-        #Human NPC Template
-baseHumanNPCTemplate = {}
-baseHumanNPCTemplate[''] = 0
+        #Human NPC Base Template
+baseHumanNPCTemplate = copy.deepcopy(baseNPCTemplate)
+baseHumanNPCTemplate['Origin'] = originHumanList[0]
+baseNPCTemplate['Hostility'] = "Variable"
+baseNPCTemplate['Species'] = "Human"
+baseNPCTemplate['Type'] = "HumanRaceVarious"
 
-        #Monster Template
+        #Monster Base Template
 baseMonsterTemplate = copy.deepcopy(baseNPCTemplate)
+baseMonsterTemplate['Origin'] = originMonsterList[0]
 baseMonsterTemplate['Hostility'] = "Hostile"
 baseMonsterTemplate['Species'] = "Default"
 baseMonsterTemplate['Type'] = "Monster"
-baseMonsterTemplate['Name'] = "Default"
 baseMonsterTemplate['Rank'] = 1
-baseMonsterTemplate['Power'] = 0
-baseMonsterTemplate['Defense'] = 0
-baseMonsterTemplate['Life'] = 1
-baseMonsterTemplate['MaxLife'] = 1
 baseMonsterTemplate['XP'] = 0
 baseMonsterTemplate['CoinFactor'] = 0
 
@@ -165,7 +184,6 @@ baseMonsterTemplate['CoinFactor'] = 0
 goblinTemplate = copy.deepcopy(baseMonsterTemplate)
 goblinTemplate['Species'] = "PseudoHumanoid"
 goblinTemplate['Type'] = "Goblinoid"
-goblinTemplate['Name'] = "Default"
 goblinTemplate['XP'] = 10
 goblinTemplate['CoinFactor'] = 3
 
@@ -178,6 +196,7 @@ goblin['MaxLife'] = 50
 
 goblinoidList.append(goblin)
 mobList.append(goblin)
+mobCaveList.append(goblin)
 
 hobgoblin = copy.deepcopy(goblinTemplate)
 hobgoblin['Name'] = "Hobgoblin"
@@ -191,17 +210,49 @@ hobgoblin['CoinFactor'] = 5
 
 goblinoidList.append(hobgoblin)
 mobList.append(hobgoblin)
+mobCaveList.append(hobgoblin)
 
-print("base NPC : ", baseNPCTemplate)
-print("base monster : ", baseMonsterTemplate)
-print("goblin template : ", goblinTemplate)
-print("goblin : ", goblin)
-print("hob : ", hobgoblin)
-
-#Undead
+            #Undead
 
         #Pets
 
-#Definitions
+#################################################################################################
+#                                         DEFINITIONS                                           #
+#################################################################################################
 
     #Characters
+
+        #Humans
+
+        #Monsters
+
+            #Humanoids
+
+            #Pseudo Humanoids
+
+                #Goblins and Goblinoids
+
+goblin = copy.deepcopy(goblinTemplate)
+goblin['Name'] = "Goblin"
+goblin['Power'] = 12
+goblin['Defense'] = 2
+goblin['Life'] = 50
+goblin['MaxLife'] = 50
+
+goblinoidList.append(goblin)
+mobList.append(goblin)
+mobCaveList.append(goblin)
+
+hobgoblin = copy.deepcopy(goblinTemplate)
+hobgoblin['Name'] = "Hobgoblin"
+hobgoblin['Rank'] = 2
+hobgoblin['Power'] = 16
+hobgoblin['Defense'] = 4
+hobgoblin['Life'] = 60
+hobgoblin['MaxLife'] = 60
+hobgoblin['XP'] = 14
+hobgoblin['CoinFactor'] = 5
+
+goblinoidList.append(hobgoblin)
+mobList.append(hobgoblin)
+mobCaveList.append(hobgoblin)
