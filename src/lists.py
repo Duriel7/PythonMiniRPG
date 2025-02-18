@@ -193,13 +193,22 @@ humanoidTemplate['Species'] = "Humanoid"
 pseudoHumanoidTemplate = copy.deepcopy(baseMonsterTemplate)
 pseudoHumanoidTemplate['Species'] = "PseudoHumanoid"
 
-                #Goblins and Goblinoids
+                #Goblinoids
 
 goblinTemplate = copy.deepcopy(pseudoHumanoidTemplate)
 goblinTemplate['Type'] = "Goblinoid"
-baseNPCTemplate['ManaRegeneration'] = 0
-goblinTemplate['XP'] = 10
-goblinTemplate['CoinFactor'] = 3
+goblinTemplate['ManaRegeneration'] = 0
+
+                #Orcoids
+orcTemplate = copy.deepcopy(pseudoHumanoidTemplate)
+orcTemplate['Type'] = "Orcoid"
+orcTemplate['ManaRegeneration'] = 0
+
+                #Ogre likes
+ogreTemplate = copy.deepcopy(pseudoHumanoidTemplate)
+ogreTemplate['Type'] = "Orcoid"
+ogreTemplate['ManaRegeneration'] = 0
+
 
             #Undead
 
@@ -222,7 +231,7 @@ baseNPCTemplate['LivingState'] = "Undead"
 
             #Pseudo Humanoids
 
-                #Goblins and Goblinoids
+                #Goblins
 
 goblin = copy.deepcopy(goblinTemplate)
 goblin['Name'] = "Goblin"
@@ -232,6 +241,8 @@ goblin['Life'] = 50
 goblin['MaxLife'] = 50
 goblin['Stamina'] = 10
 goblin['MaxStamina'] = 10
+goblin['XP'] = 10
+goblin['CoinFactor'] = 3
 
 goblinoidList.append(goblin)
 mobList.append(goblin)
@@ -254,3 +265,7 @@ goblinoidList.append(hobgoblin)
 mobList.append(hobgoblin)
 mobCaveList.append(hobgoblin)
 mobForestList.append(hobgoblin)
+
+                #Orcoids
+
+                #Ogres
