@@ -33,6 +33,10 @@ main :
 add mana/max mana
 add stamina/max stamina
 add char stats => strength, dexterity, agility, vitality, energy, luck
+add regeneration for life, stamina and mana, based on class or monster species/type
+notes :
+=> for certain monsters life regen is not 0 (vampire ?)
+=> life regen might be negative for some undead
 
 secondary :
 

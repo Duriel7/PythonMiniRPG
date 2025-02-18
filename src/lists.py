@@ -148,6 +148,13 @@ baseNPCTemplate['Power'] = 0
 baseNPCTemplate['Defense'] = 0
 baseNPCTemplate['Life'] = 1
 baseNPCTemplate['MaxLife'] = 1
+baseNPCTemplate['LifeRegeneration'] = 0
+baseNPCTemplate['Stamina'] = 1
+baseNPCTemplate['MaxStamina'] = 1
+baseNPCTemplate['StaminaRegeneration'] = 2
+baseNPCTemplate['Mana'] = 0
+baseNPCTemplate['MaxMana'] = 0
+baseNPCTemplate['ManaRegeneration'] = 1
 
     #Characters
 
@@ -190,6 +197,7 @@ pseudoHumanoidTemplate['Species'] = "PseudoHumanoid"
 
 goblinTemplate = copy.deepcopy(pseudoHumanoidTemplate)
 goblinTemplate['Type'] = "Goblinoid"
+baseNPCTemplate['ManaRegeneration'] = 0
 goblinTemplate['XP'] = 10
 goblinTemplate['CoinFactor'] = 3
 
@@ -197,7 +205,6 @@ goblinTemplate['CoinFactor'] = 3
 
 undeadTemplate = copy.deepcopy(baseMonsterTemplate)
 baseNPCTemplate['LivingState'] = "Undead"
-undeadTemplate['Species'] = "Default"
 
         #Pets
 
@@ -223,10 +230,13 @@ goblin['Power'] = 12
 goblin['Defense'] = 2
 goblin['Life'] = 50
 goblin['MaxLife'] = 50
+goblin['Stamina'] = 10
+goblin['MaxStamina'] = 10
 
 goblinoidList.append(goblin)
 mobList.append(goblin)
 mobCaveList.append(goblin)
+mobForestList.append(goblin)
 
 hobgoblin = copy.deepcopy(goblinTemplate)
 hobgoblin['Name'] = "Hobgoblin"
@@ -235,9 +245,12 @@ hobgoblin['Power'] = 16
 hobgoblin['Defense'] = 4
 hobgoblin['Life'] = 60
 hobgoblin['MaxLife'] = 60
+hobgoblin['Stamina'] = 15
+hobgoblin['MaxStamina'] = 15
 hobgoblin['XP'] = 14
 hobgoblin['CoinFactor'] = 5
 
 goblinoidList.append(hobgoblin)
 mobList.append(hobgoblin)
 mobCaveList.append(hobgoblin)
+mobForestList.append(hobgoblin)

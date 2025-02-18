@@ -2,7 +2,7 @@ features :
 
 make different areas for start
 merchants
-make flee chance dependent on mob with a parameter (eg : speed or agility)
+make flee chance dependent on mob with a parameter (eg : speed or agility) + stamina left
 make quests procedurally generated
 make floors for the dungeon with floor bosses
 make semi random champions and elites spawns
@@ -10,6 +10,7 @@ make around village exploration richer, find items, encounter merchants, being a
 make choices done by key presses instead of typing a enter each time
 randomize some properties like power or health points
 make undead monsters have a living state instead of a specific species => abiity for damage types to be efficient against undead + original species
+find a ay to use ranks but differenciate numeral ranks from letter ranks
 
 save feature :
 save the boolean for creation and feeding of databases => python file or external file ?
@@ -18,6 +19,7 @@ save characters by player and one folder containing all the save file for each p
 exploration feature :
 integration wanted : exploration => combat OR merchant OR find item OR find place...
 make a small random to have events playing in the dungeon such as find an item, see a monster and decide to attack or not, find a chest, a hidden way, or a trap
+make a counter in case randomness chooses too many times in a row the same monster (store monster name, increment counter, if counter > x then choose another monster)
 
 combat feature :
 make combat decisions based on character class
