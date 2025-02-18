@@ -20,7 +20,8 @@ ghost list =>
 demon list :
 
 slimy list :
-slime => slime (base), glutton slime, plant slime, carrion slime, poison slime, rocky slime, metal slime, crytal slime (base slime but can harden to protect itself), 
+slime => slime (base), glutton slime, plant slime, carrion slime, poison slime, rocky slime, metal slime, crytal slime (base slime but can harden to protect itself),
+mana slime (mana fluid charged base slime)
 mud => animated mud, muddy corpse (undead too)
 gel => 
 

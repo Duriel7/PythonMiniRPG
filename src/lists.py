@@ -184,17 +184,14 @@ baseMonsterTemplate['CoinFactor'] = 0
         #Monsters types
 
             #Humanoids
-
 humanoidTemplate = copy.deepcopy(baseMonsterTemplate)
 humanoidTemplate['Species'] = "Humanoid"
 
             #Pseudo Humanoids
-
 pseudoHumanoidTemplate = copy.deepcopy(baseMonsterTemplate)
 pseudoHumanoidTemplate['Species'] = "PseudoHumanoid"
 
                 #Goblinoids
-
 goblinTemplate = copy.deepcopy(pseudoHumanoidTemplate)
 goblinTemplate['Type'] = "Goblinoid"
 goblinTemplate['ManaRegeneration'] = 0
@@ -209,11 +206,24 @@ ogreTemplate = copy.deepcopy(pseudoHumanoidTemplate)
 ogreTemplate['Type'] = "Orcoid"
 ogreTemplate['ManaRegeneration'] = 0
 
-
             #Undead
-
 undeadTemplate = copy.deepcopy(baseMonsterTemplate)
-baseNPCTemplate['LivingState'] = "Undead"
+undeadTemplate['LivingState'] = "Undead"
+undeadTemplate['ManaRegeneration'] = 0
+
+                #Vampires
+                #Zombies
+                #Ghosts
+                #Other undead monsters - can be anything for particular situations
+
+            #Slimy
+slimyTemplate = copy.deepcopy(baseMonsterTemplate)
+slimyTemplate['Species'] = "Slimy"
+slimyTemplate['ManaRegeneration'] = 0
+
+                #Slimes
+slimeTemplate = copy.deepcopy(slimyTemplate)
+slimeTemplate['Type'] = "Slime"
 
         #Pets
 
