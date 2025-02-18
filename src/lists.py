@@ -137,6 +137,7 @@ crossbowList = []
 
     #Base global NPC Template
 baseNPCTemplate = {}
+baseNPCTemplate['LivingState'] = "Living"
 baseNPCTemplate['Origin'] = "None"
 baseNPCTemplate['Hostility'] = "Neutral"
 baseNPCTemplate['Species'] = "Default"
@@ -177,42 +178,26 @@ baseMonsterTemplate['CoinFactor'] = 0
 
             #Humanoids
 
+humanoidTemplate = copy.deepcopy(baseMonsterTemplate)
+humanoidTemplate['Species'] = "Humanoid"
+
             #Pseudo Humanoids
+
+pseudoHumanoidTemplate = copy.deepcopy(baseMonsterTemplate)
+pseudoHumanoidTemplate['Species'] = "PseudoHumanoid"
 
                 #Goblins and Goblinoids
 
-goblinTemplate = copy.deepcopy(baseMonsterTemplate)
-goblinTemplate['Species'] = "PseudoHumanoid"
+goblinTemplate = copy.deepcopy(pseudoHumanoidTemplate)
 goblinTemplate['Type'] = "Goblinoid"
 goblinTemplate['XP'] = 10
 goblinTemplate['CoinFactor'] = 3
 
-goblin = copy.deepcopy(goblinTemplate)
-goblin['Name'] = "Goblin"
-goblin['Power'] = 12
-goblin['Defense'] = 2
-goblin['Life'] = 50
-goblin['MaxLife'] = 50
-
-goblinoidList.append(goblin)
-mobList.append(goblin)
-mobCaveList.append(goblin)
-
-hobgoblin = copy.deepcopy(goblinTemplate)
-hobgoblin['Name'] = "Hobgoblin"
-hobgoblin['Rank'] = 2
-hobgoblin['Power'] = 16
-hobgoblin['Defense'] = 4
-hobgoblin['Life'] = 60
-hobgoblin['MaxLife'] = 60
-hobgoblin['XP'] = 14
-hobgoblin['CoinFactor'] = 5
-
-goblinoidList.append(hobgoblin)
-mobList.append(hobgoblin)
-mobCaveList.append(hobgoblin)
-
             #Undead
+
+undeadTemplate = copy.deepcopy(baseMonsterTemplate)
+baseNPCTemplate['LivingState'] = "Undead"
+undeadTemplate['Species'] = "Default"
 
         #Pets
 

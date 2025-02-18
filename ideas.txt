@@ -9,7 +9,7 @@ make semi random champions and elites spawns
 make around village exploration richer, find items, encounter merchants, being ambushed
 make choices done by key presses instead of typing a enter each time
 randomize some properties like power or health points
-use deepcopy() to make templates and derive from that for individual monsters
+make undead monsters have a living state instead of a specific species => abiity for damage types to be efficient against undead + original species
 
 save feature :
 save the boolean for creation and feeding of databases => python file or external file ?

@@ -14,8 +14,8 @@ ogres => ogre, red ogre, green ogre, blue ogre, black ogre, white ogre, mutant o
 
 undead list :
 vampire list => 
-zombie list =>
-ghost list =>
+zombie list => 
+ghost list => 
 
 demon list :
 
