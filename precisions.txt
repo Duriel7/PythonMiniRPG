@@ -25,6 +25,14 @@ mana slime (mana fluid charged base slime)
 mud => animated mud, muddy corpse (undead too)
 gel => 
 
+animal list :
+
+
+insectoid list :
+
+
+vegetal list :
+
 *************************************************************************
 
 STATS :

@@ -12,6 +12,7 @@ randomize some properties like power or health points
 make undead monsters have a living state instead of a specific species => abiity for damage types to be efficient against undead + original species
 find a way to use ranks but differenciate numeral ranks from letter ranks
 make a random name (composed of syllabs) engine for village names
+make defined major NPC in a list but make random npc register by characters so it randomizes for every player
 
 save feature :
 save the boolean for creation and feeding of databases => python file or external file ?

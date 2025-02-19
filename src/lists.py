@@ -74,7 +74,7 @@ mobSkyFrequencyList = []
 mobSkyDict = {}
 
 #Append origin sublists in main lists and dictionaries
-originHumanList.append(cityList)
+originHumanList.append(allCitiesList)
 originHumanList.append(countryList)
 originHumanList.append(continentList)
 originMonsterList.append(environmentTypeList)
@@ -91,6 +91,10 @@ originHumanDict = {
     'Continent': continentList[0]
 }
 
+#Idea for the corresponding country and continent for each preceding entity
+#make major cities correspond to a country, each country to a continent, then
+#make the random choice catch the corresponding value and pass it to the dictionary
+
 originHumanRandomDict = { #make it so the country is corresponding
     'City': random.choice(allCitiesList),
     'Country': random.choice(countryList),
@@ -99,7 +103,7 @@ originHumanRandomDict = { #make it so the country is corresponding
 
     #Characters
 
-        #NPC human
+        #NPC human - major defined NPC only
 humanList = []
 
         #Monsters
