@@ -14,17 +14,23 @@ mobSpeciesList = []
 jobList = []
 classList = []
 
-cityList = []
-countryList = []
 continentList = []
+countryList = []
+allCitiesList = []
+majorCitiesList = []
+cityList = []
+villageNamesList = []
 environmentTypeList = []
 
+#Assigning major cities to their country
+cityDict = {}
+#for of loop
+
+#Assigning countries to their continent
+countryDict = {}
+#for of loop
+
 originHumanList = []
-originHumanDict = {
-    'City': cityList,
-    'Country': countryList,
-    'Continent': continentList
-}
 originMonsterList = []
 
 mobPlainsList = []
@@ -67,13 +73,29 @@ mobSkyList = []
 mobSkyFrequencyList = []
 mobSkyDict = {}
 
-#Append origin sublists in main lists
+#Append origin sublists in main lists and dictionaries
 originHumanList.append(cityList)
 originHumanList.append(countryList)
 originHumanList.append(continentList)
 originMonsterList.append(environmentTypeList)
 
+allCitiesList.append(majorCitiesList)
+allCitiesList.append(cityList)
+allCitiesList.append(villageNamesList)
+
 originMonsterList.append(continentList)
+
+originHumanDict = {
+    'City': cityList[0],
+    'Country': countryList[0],
+    'Continent': continentList[0]
+}
+
+originHumanRandomDict = { #make it so the country is corresponding
+    'City': random.choice(allCitiesList),
+    'Country': random.choice(countryList),
+    'Continent': random.choice(continentList)
+}
 
     #Characters
 
