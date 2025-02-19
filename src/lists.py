@@ -22,6 +22,18 @@ cityList = []
 villageNamesList = []
 environmentTypeList = []
 
+environmentTypeList.append("Plains")
+environmentTypeList.append("Savanna")
+environmentTypeList.append("Forest")
+environmentTypeList.append("Cave")
+environmentTypeList.append("Desert")
+environmentTypeList.append("Snow")
+environmentTypeList.append("Mountains")
+environmentTypeList.append("River")
+environmentTypeList.append("Lake")
+environmentTypeList.append("Sea")
+environmentTypeList.append("Sky")
+
 #Assigning major cities to their country
 cityDict = {}
 #for of loop
@@ -36,6 +48,10 @@ originMonsterList = []
 mobPlainsList = []
 modPlainsFrequencyList = []
 mobPlainsDict = {}
+
+mobSavannaList = []
+modSavannaFrequencyList = []
+mobSavannaDict = {}
 
 mobForestList = []
 mobForestFrequencyList = []
@@ -287,7 +303,43 @@ slimyTemplate['ManaRegeneration'] = 0
 slimeTemplate = copy.deepcopy(slimyTemplate)
 slimeTemplate['Type'] = "Slime"
 
+                #Muddies - Muds
+mudTemplate = copy.deepcopy(slimyTemplate)
+mudTemplate['Type'] = "Mud"
+
+                #Gels
+gelTemplate = copy.deepcopy(slimyTemplate)
+gelTemplate['Type'] = "Gel"
+
         #Pets
+
+    #Environment Types
+
+        #General Template
+
+
+        #Plains
+
+        #Savanna
+
+        #Forest
+
+        #Cave
+
+        #Desert
+
+        #Snow
+
+        #Mountains
+
+        #River
+
+        #Lake
+
+        #Sea
+
+        #Sky
+
 
 #################################################################################################
 #                                         DEFINITIONS                                           #
@@ -340,4 +392,41 @@ mobForestList.append(hobgoblin)
 
                 #Orcoids
 
-                #Ogres
+                #Ogre likes
+
+            #Undead
+
+                #Vampires
+                #Zombies
+                #Ghosts
+                #Other undead monsters - can be anything for particular situations
+
+            #Slimy
+
+                #Slimes
+
+slime = copy.deepcopy(slimeTemplate)
+slime['Name'] = "Slime"
+slime['Power'] = 1
+slime['Defense'] = 0
+slime['Life'] = 4
+slime['MaxLife'] = 4
+slime['Stamina'] = 4
+slime['MaxStamina'] = 4
+slime['XP'] = 1
+slime['CoinFactor'] = 0.5
+
+slimelist.append(slime)
+mobList.append(slime)
+mobCaveList.append(slime)
+mobPlainsList.append(slime)
+
+                #Muddies - Muds
+                #Gels
+
+        #Pets
+
+#################################################################################################
+#                                   DICTIONARIES REFORMING                                      #
+#################################################################################################
+
