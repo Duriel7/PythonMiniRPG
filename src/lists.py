@@ -316,7 +316,11 @@ gelTemplate['Type'] = "Gel"
     #Environment Types
 
         #General Template
-
+environmentBaseTemplate = {}
+environmentBaseTemplate['Type'] = "Default"
+environmentBaseTemplate['WorldLocation'] = "CardinalPoint"
+environmentBaseTemplate['Fauna'] = "CorrespondingList"
+environmentBaseTemplate['DifficultyFactor'] = 0
 
         #Plains
 
