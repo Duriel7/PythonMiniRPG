@@ -14,30 +14,66 @@ mobSpeciesList = []
 jobList = []
 classList = []
 
-originHumanList = []
-originMonsterList = []
-
 cityList = []
 countryList = []
 continentList = []
 environmentTypeList = []
 
+originHumanList = []
+originHumanDict = {
+    'City': cityList,
+    'Country': countryList,
+    'Continent': continentList
+}
+originMonsterList = []
+
 mobPlainsList = []
+modPlainsFrequencyList = []
+mobPlainsDict = {}
+
 mobForestList = []
+mobForestFrequencyList = []
+mobForestDict = {}
+
 mobCaveList = []
+mobCaveFrequencyList = []
+mobCaveDict = {}
+
 mobDesertList = []
+mobDesertFrequencyList = []
+mobDesertDict = {}
+
 mobSnowList = []
+mobSnowFrequencyList = []
+modSnowDict = {}
+
 mobMountainsList = []
+mobMountainsFrequencyList = []
+mobMountainsDict = {}
+
 mobRiverList = []
+mobRiverFrequencyList = []
+mobRiverDict = {}
+
 mobLakeList = []
+mobLakeFrequencyList = []
+mobLakeDict = {}
+
 mobSeaList = []
+mobSeaFrequencyList = []
+mobSeaDict = {}
+
 mobSkyList = []
+mobSkyFrequencyList = []
+mobSkyDict = {}
 
 #Append origin sublists in main lists
 originHumanList.append(cityList)
 originHumanList.append(countryList)
 originHumanList.append(continentList)
 originMonsterList.append(environmentTypeList)
+
+originMonsterList.append(continentList)
 
     #Characters
 

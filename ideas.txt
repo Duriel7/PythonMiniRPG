@@ -10,7 +10,7 @@ make around village exploration richer, find items, encounter merchants, being a
 make choices done by key presses instead of typing a enter each time
 randomize some properties like power or health points
 make undead monsters have a living state instead of a specific species => abiity for damage types to be efficient against undead + original species
-find a ay to use ranks but differenciate numeral ranks from letter ranks
+find a way to use ranks but differenciate numeral ranks from letter ranks
 
 save feature :
 save the boolean for creation and feeding of databases => python file or external file ?
@@ -21,6 +21,7 @@ integration wanted : exploration => combat OR merchant OR find item OR find plac
 make a small random to have events playing in the dungeon such as find an item, see a monster and decide to attack or not, find a chest, a hidden way, or a trap
 make a counter in case randomness chooses too many times in a row the same monster (store monster name, increment counter, if counter > x then choose another monster)
 OR implement dictionaries to have monster frequencies
+OR keep the list and make a dictionary with a zip against a list of frequencies
 
 combat feature :
 make combat decisions based on character class
