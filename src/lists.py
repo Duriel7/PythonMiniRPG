@@ -1,4 +1,4 @@
-import random, math, sys, copy
+import random, copy
 from database_feed import *
 
 #This file will contain all items lists that will be needed for the game
@@ -239,9 +239,11 @@ baseNPCTemplate['ManaRegeneration'] = 1
         #Human NPC Base Template
 baseHumanNPCTemplate = copy.deepcopy(baseNPCTemplate)
 baseHumanNPCTemplate['Origin'] = originHumanList[0]
-baseNPCTemplate['Hostility'] = "Variable"
-baseNPCTemplate['Species'] = "Human"
-baseNPCTemplate['Type'] = "HumanRaceVarious"
+baseHumanNPCTemplate['Hostility'] = "Variable"
+baseHumanNPCTemplate['Species'] = "Human"
+baseHumanNPCTemplate['Type'] = "HumanRaceVarious"
+baseHumanNPCTemplate['CoinFactorHuman'] = 0
+baseHumanNPCTemplate['XPHuman'] = 0
 
         #Monster Base Template
 baseMonsterTemplate = copy.deepcopy(baseNPCTemplate)
@@ -250,8 +252,9 @@ baseMonsterTemplate['Hostility'] = "Hostile"
 baseMonsterTemplate['Species'] = "Default"
 baseMonsterTemplate['Type'] = "Monster"
 baseMonsterTemplate['Rank'] = 1
+baseMonsterTemplate['CoinFactorSpecies'] = 0
+baseMonsterTemplate['CoinFactorType'] = 0
 baseMonsterTemplate['XP'] = 0
-baseMonsterTemplate['CoinFactor'] = 0
 
         #Monsters species
 
@@ -370,7 +373,7 @@ goblin['MaxLife'] = 50
 goblin['Stamina'] = 10
 goblin['MaxStamina'] = 10
 goblin['XP'] = 10
-goblin['CoinFactor'] = 3
+goblin['CoinFactorSpecies'] = 3
 
 goblinoidList.append(goblin)
 mobList.append(goblin)
@@ -387,7 +390,7 @@ hobgoblin['MaxLife'] = 60
 hobgoblin['Stamina'] = 15
 hobgoblin['MaxStamina'] = 15
 hobgoblin['XP'] = 14
-hobgoblin['CoinFactor'] = 5
+hobgoblin['CoinFactorSpecies'] = 5
 
 goblinoidList.append(hobgoblin)
 mobList.append(hobgoblin)
@@ -418,7 +421,7 @@ slime['MaxLife'] = 4
 slime['Stamina'] = 4
 slime['MaxStamina'] = 4
 slime['XP'] = 1
-slime['CoinFactor'] = 0.5
+slime['CoinFactorSpecies'] = 0.5
 
 slimelist.append(slime)
 mobList.append(slime)
