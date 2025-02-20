@@ -6,6 +6,7 @@ humanoid list :
 corrupted humans => will have some human origins and different levels and ranks
 corrupted elves => dark, high, wood, blood (unique to corrupted ones), crystal (crystal elves are elves imprisoned in stone by an ancient curse, end game enemy)
 corrupted dwarves => deep, high, forest, blood (same as elves counterpart), crystal (same)
+beastmen => centaur, lizardman, wolfman, foxman, tigerman, lionman, dogman, catman, goatman, cowman
 
 pseudohumanoid list :
 goblinoids => goblin, hobgoblin, goblin warrior, goblin lieutenant, goblin chief, goblin priest, goblin general, goblin king, goblin emperor
@@ -14,10 +15,23 @@ ogres => ogre, red ogre, green ogre, blue ogre, black ogre, white ogre, mutant o
 
 undead list :
 vampire list => 
-zombie list => 
-ghost list => 
+zombie list => zombie, ghoul, plant zombie (corpse invaded by plants), zombie beast, lich, archlich, dracolich
+skeleton list => skeleton, skeleton warrior, skeleton mage, skeleton knight, skeleton general, skeletal beast, skeletal demon, skeletal dragon
+ghost list => dead spirit, ghost, 
 
 demon list :
+demonic beast => demonic animal (choose species), 
+lesser demon => imp, great imp, 
+medium demon => 
+greater demon => 
+high demon => 
+lords => 
+archdemon => 
+
+spirit list :
+elemental => nymph, djinn, 
+magic => djinn, 
+divine => djinn (named), Sylphide (wind), Callypso (water), Ifrit (fire), 
 
 slimy list :
 slime => slime (base), glutton slime, plant slime, carrion slime, poison slime, rocky slime, metal slime, crytal slime (base slime but can harden to protect itself),
@@ -25,13 +39,25 @@ mana slime (mana fluid charged base slime)
 mud => animated mud, muddy corpse (undead too)
 gel => 
 
-animal list :
-
+beast list :
+animal => 
+deformed animal => 
+animal spirit => 
 
 insectoid list :
-
+flying => 
+creeping => 
+digging => 
 
 vegetal list :
+plants => carnivorous plant, 
+plant spirit => 
+
+dragon list :
+wyvern => 
+real dragon => 
+draconoid (small dragons or manlike dragons who cannot talk) => 
+dracohuman (diluted blooded dragons with humans) => 
 
 *************************************************************************
 
@@ -39,9 +65,7 @@ STATS :
 
 main :
 
-add mana/max mana
-add stamina/max stamina
-add char stats => strength, dexterity, agility, vitality, energy, luck
+add char stats => strength, dexterity, agility, vitality, energy, luck => dictionary ?
 add regeneration for life, stamina and mana, based on class or monster species/type
 notes :
 => for certain monsters life regen is not 0 (vampire ?)

@@ -1,7 +1,7 @@
 features :
 
 make different areas for start
-merchants
+random merchants
 make flee chance dependent on mob with a parameter (eg : speed or agility) + stamina left
 make quests procedurally generated
 make floors for the dungeon with floor bosses
@@ -13,6 +13,7 @@ make undead monsters have a living state instead of a specific species => abiity
 find a way to use ranks but differenciate numeral ranks from letter ranks
 make a random name (composed of syllabs) engine for village names
 make defined major NPC in a list but make random npc register by characters so it randomizes for every player
+add a tag system to make specific damage easier : dictionary of tags inside the dictionary of each template and definition
 
 save feature :
 save the boolean for creation and feeding of databases => python file or external file ?
@@ -31,6 +32,8 @@ make combat decisions based on character class
 make subfunctions for combat turns so I can decide for initiative from the player or from the monster
 make another function for choosen combat when the exploration function gives the monster itself, which will call subfunctions
 make an arena system with opponent lists (raised monsters, human classes) with another combat function called arena
+make a combat loop or partial loop for the arena to be able to alter coins and XP gains
+humans have a specific arena characteristic for coins because there will be clandestine arena battles in the wild
 
 npc feature :
 random npc : names, surnames, nicknames, origin (country, continent, city), specialization (job, class), personalities
