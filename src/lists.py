@@ -234,6 +234,10 @@ baseNPCTemplate['Mana'] = 0
 baseNPCTemplate['MaxMana'] = 0
 baseNPCTemplate['ManaRegeneration'] = 1
 
+#Variables for XP and coins
+valueFactorHuman = 20
+valueFactorMonster = 30
+
     #Characters
 
         #Human NPC Base Template
@@ -242,8 +246,19 @@ baseHumanNPCTemplate['Origin'] = originHumanList[0]
 baseHumanNPCTemplate['Hostility'] = "Variable"
 baseHumanNPCTemplate['Species'] = "Human"
 baseHumanNPCTemplate['Type'] = "HumanRaceVarious"
-baseHumanNPCTemplate['CoinFactorHuman'] = 0
-baseHumanNPCTemplate['XPHuman'] = 0
+baseHumanNPCTemplate['CoinFactorHuman'] = valueFactorHuman * 1.5 * baseHumanNPCTemplate['Rank']
+baseHumanNPCTemplate['CoinFactorArena'] = valueFactorHuman * 2.5 * (1 + baseHumanNPCTemplate['Rank'])
+baseHumanNPCTemplate['CoinFactor'] = 0
+baseHumanNPCTemplate['XPHuman'] = valueFactorHuman * 1.2 * (1 + baseHumanNPCTemplate['Rank'])
+
+            #Human in general context
+generalHumanNPCTemplate = copy.deepcopy(baseHumanNPCTemplate)
+generalHumanNPCTemplate['CoinFactor'] = generalHumanNPCTemplate['CoinFactorHuman']
+
+            #Human in arena context
+arenaHumanNPCTemplate = copy.deepcopy(baseHumanNPCTemplate)
+arenaHumanNPCTemplate['CoinFactor'] = arenaHumanNPCTemplate['CoinFactorArena']
+
 
         #Monster Base Template
 baseMonsterTemplate = copy.deepcopy(baseNPCTemplate)
@@ -252,9 +267,10 @@ baseMonsterTemplate['Hostility'] = "Hostile"
 baseMonsterTemplate['Species'] = "Default"
 baseMonsterTemplate['Type'] = "Monster"
 baseMonsterTemplate['Rank'] = 1
-baseMonsterTemplate['CoinFactorSpecies'] = 0
-baseMonsterTemplate['CoinFactorType'] = 0
-baseMonsterTemplate['XP'] = 0
+baseMonsterTemplate['CoinFactorSpecies'] = valueFactorMonster * 1.2 * baseMonsterTemplate['Rank']
+baseMonsterTemplate['CoinFactorType'] = valueFactorMonster * 1.4 * baseMonsterTemplate['Rank']
+baseMonsterTemplate['CoinFactor'] = 0
+baseMonsterTemplate['XP'] = valueFactorMonster * 1.3 * baseMonsterTemplate['Rank']
 
         #Monsters species
 
