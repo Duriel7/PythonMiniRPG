@@ -20,7 +20,7 @@ save the boolean for creation and feeding of databases => python file or externa
 save characters by player and one folder containing all the save file for each player
 
 exploration feature :
-integration wanted : exploration => combat OR merchant OR find item OR find place...
+integration wanted : exploration => combat OR merchant OR find item OR find place OR find tumb with epitaphs or items...
 make a small random to have events playing in the dungeon such as find an item, see a monster and decide to attack or not, find a chest, a hidden way, or a trap
 make a counter in case randomness chooses too many times in a row the same monster (store monster name, increment counter, if counter > x then choose another monster)
 OR implement dictionaries to have monster frequencies
