@@ -14,6 +14,7 @@ find a way to use ranks but differenciate numeral ranks from letter ranks
 make a random name (composed of syllabs) engine for village names
 make defined major NPC in a list but make random npc register by characters so it randomizes for every player
 add a tag system to make specific damage easier : dictionary of tags inside the dictionary of each template and definition
+maybe : include exchange between characters if possible
 
 save feature :
 save the boolean for creation and feeding of databases => python file or external file ?
