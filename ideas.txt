@@ -45,6 +45,10 @@ add stats to character templates and definitions
 differenciate main and secondary stats
 derived stats formulas => 
 
+classes feature :
+make classes real dictionnaries to choose from
+each class will call it's own definition and template upon choice
+
 transform :
 dungeon function to have choice which then leads to other functions
 exploration function to be different depending on environment around villages
