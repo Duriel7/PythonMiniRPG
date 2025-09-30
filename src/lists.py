@@ -300,7 +300,7 @@ orcTemplate['ManaRegeneration'] = 0
 
                 #Ogre likes
 ogreTemplate = copy.deepcopy(pseudoHumanoidTemplate)
-ogreTemplate['Type'] = "Orcoid"
+ogreTemplate['Type'] = "OgreLike"
 ogreTemplate['ManaRegeneration'] = 0
 
             #Undead

@@ -7,7 +7,7 @@ try:
     dbconnect()
     dbcursor()
 
-    #Global check variable
+    #Global check variables
     characterCheck = False
     combatCheck = False
     explorationCheck = False
