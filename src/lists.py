@@ -14,25 +14,21 @@ mobSpeciesList = []
 jobList = []
 classList = []
 
+continentNamesList = []
+countryNamesList = []
+allCitiesNamesList = []
+majorCitiesNamesList = []
+cityNamesList = []
+villageNamesList = []
+
 continentList = []
 countryList = []
 allCitiesList = []
 majorCitiesList = []
 cityList = []
-villageNamesList = []
-environmentTypeList = []
+villageList = []
 
-environmentTypeList.append("Plains")
-environmentTypeList.append("Savanna")
-environmentTypeList.append("Forest")
-environmentTypeList.append("Cave")
-environmentTypeList.append("Desert")
-environmentTypeList.append("Snow")
-environmentTypeList.append("Mountains")
-environmentTypeList.append("River")
-environmentTypeList.append("Lake")
-environmentTypeList.append("Sea")
-environmentTypeList.append("Sky")
+environmentTypeList = []
 
 #Assigning major cities to their country
 cityDict = {}
@@ -124,15 +120,20 @@ humanList = []
 
         #Monsters
             #Species and Races
+
             #Humanoids
 humanoidList = []
 corruptedHumanList = []
 corruptedElfList = []
 corruptedDwarfList = []
+beastMenList = []
+homonculiiList = []
 #Append in humanoids list
 humanoidList.append(corruptedHumanList)
 humanoidList.append(corruptedElfList)
 humanoidList.append(corruptedDwarfList)
+humanoidList.append(beastMenList)
+humanoidList.append(homonculiiList)
 
             #Pseudohumanoids
 pseudoHumanoidList = []
@@ -144,16 +145,24 @@ pseudoHumanoidList.append(goblinoidList)
 pseudoHumanoidList.append(orcoidList)
 pseudoHumanoidList.append(ogreList)
 
-            #Undead
-undeadList = []
+            #Undead - Humanoid
+undeadHumanoidList = []
 vampireList = []
 zombieList = []
+skeletonList = []
 ghostList = []
-#Append in undead list
-humanoidList.append(undeadList)
-undeadList.append(vampireList)
-undeadList.append(zombieList)
-undeadList.append(ghostList)
+#Append in humanoid undead list
+humanoidList.append(undeadHumanoidList)
+undeadHumanoidList.append(vampireList)
+undeadHumanoidList.append(zombieList)
+undeadHumanoidList.append(skeletonList)
+undeadHumanoidList.append(ghostList)
+
+            #Undead - Non Humanoid
+undeadList = []
+specterList = []
+#Append in non humanoid undead list
+undeadList.append(specterList)
 
             #Demons
 #Append in demons list
@@ -168,13 +177,17 @@ slimyList.append(slimelist)
 slimyList.append(mudList)
 slimyList.append(gelList)
 
-    #Inhabited places hardcoded
+    #Inhabited places - hardcoded => do procedurally generated ones later in definitions ?
 
         #Villages
+villageNamesList.append("Slenia")
+
+        #Cities and Towns
 
         #Main cities
+majorCitiesNamesList.append("Otoria")
 
-    #Dungeons
+    #Dungeons - hardcoded base
 
         #Subterranean
 
@@ -183,6 +196,21 @@ slimyList.append(gelList)
         #Air placed
 
         #Other dimensions
+
+    #Dungeons - procedurally generated + procedural algorithm => TO DO later in definitions ?
+
+    #Environement List
+environmentTypeList.append("Plains")
+environmentTypeList.append("Savanna")
+environmentTypeList.append("Forest")
+environmentTypeList.append("Cave")
+environmentTypeList.append("Desert")
+environmentTypeList.append("Snow")
+environmentTypeList.append("Mountains")
+environmentTypeList.append("River")
+environmentTypeList.append("Lake")
+environmentTypeList.append("Sea")
+environmentTypeList.append("Sky")
 
     #Items
 
@@ -310,6 +338,7 @@ undeadTemplate['ManaRegeneration'] = 0
 
                 #Vampires
                 #Zombies
+                #Skeletons
                 #Ghosts
                 #Other undead monsters - can be anything for particular situations
 
@@ -331,6 +360,31 @@ gelTemplate = copy.deepcopy(slimyTemplate)
 gelTemplate['Type'] = "Gel"
 
         #Pets
+
+    #Base global inhabited places Template
+
+    #Inhabited places - hardcoded
+inhabitedPlaceTemplate = {}
+
+        #Villages - Listing
+villageTemplate = copy.deepcopy(inhabitedPlaceTemplate)
+
+        #Cities and Towns - Listing
+
+        #Main cities - Listing
+majorCityTemplate = copy.deepcopy(inhabitedPlaceTemplate)
+
+    #Dungeons - hardcoded base
+
+        #Subterranean
+
+        #Overworld
+
+        #Air placed
+
+        #Other dimensions
+
+    #Dungeons - procedurally generated + procedural algorithm => TO DO later
 
     #Environment Types
 
@@ -421,8 +475,18 @@ mobForestList.append(hobgoblin)
 
                 #Vampires
                 #Zombies
+                #Skeletons
                 #Ghosts
+ghost = copy.deepcopy(undeadTemplate)
+
+undeadHumanoidList.append(ghost)
+mobList.append(ghost) #continue to append to other lists
+
                 #Other undead monsters - can be anything for particular situations
+specter = copy.deepcopy(undeadTemplate)
+
+undeadList.append(specter)
+mobList.append(specter) #continue to append in other lists
 
             #Slimy
 
@@ -448,6 +512,54 @@ mobPlainsList.append(slime)
                 #Gels
 
         #Pets
+
+    #Base global inhabited places Template
+
+    #Inhabited places - hardcoded
+
+        #Villages - Listing
+villageSlenia = copy.deepcopy(villageTemplate)
+
+        #Cities and Towns - Listing
+
+        #Main cities - Listing
+majorCitiesOtoria = copy.deepcopy(majorCityTemplate)
+
+    #Dungeons - hardcoded base
+
+        #Subterranean
+
+        #Overworld
+
+        #Air placed
+
+        #Other dimensions
+
+    #Dungeons - procedurally generated + procedural algorithm => TO DO later
+
+    #Environment Names - Example : "Plains of Skaria" can be Plains or other type
+
+        #Plains
+
+        #Savanna
+
+        #Forest
+
+        #Cave
+
+        #Desert
+
+        #Snow
+
+        #Mountains
+
+        #River
+
+        #Lake
+
+        #Sea
+
+        #Sky
 
 #################################################################################################
 #                                   DICTIONARIES REFORMING                                      #

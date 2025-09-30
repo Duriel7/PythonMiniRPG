@@ -27,6 +27,7 @@ make a counter in case randomness chooses too many times in a row the same monst
 OR implement dictionaries to have monster frequencies
 OR keep the list and make a dictionary with a zip against a list of frequencies
 make environment types have a certain difficulty factor : for monsters that appear and climatic events like sandstorms or snow storms, floods... for random funny events
+hardcoded dungeons are handplaced into the world, but procedurally generated ones can appear virtually anywhere
 
 combat feature :
 make combat decisions based on character class
