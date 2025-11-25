@@ -1,0 +1,92 @@
+LISTS :
+
+human list :
+
+humanoid list :
+corrupted humans => will have some human origins and different levels and ranks
+corrupted elves => dark, high, wood, blood (unique to corrupted ones), crystal (crystal elves are elves imprisoned in stone by an ancient curse, end game enemy)
+corrupted dwarves => deep, high, forest, blood (same as elves counterpart), crystal (same)
+beastmen => centaur, lizardman, wolfman, foxman, tigerman, lionman, dogman, catman, goatman, cowman
+homonculii => homonculus, 
+
+pseudohumanoid list :
+goblinoids => goblin, hobgoblin, goblin warrior, goblin lieutenant, goblin chief, goblin priest, goblin general, goblin king, goblin emperor
+orcoids => orc, high orc, orc warrior, orc priest, orc chief, orc general, orc king
+ogres => ogre, red ogre, green ogre, blue ogre, black ogre, white ogre, mutant ogre, demonic ogre, kijin = divine ogre
+
+undead list :
+vampire list => 
+zombie list => zombie, ghoul, plant zombie (corpse invaded by plants), zombie beast, lich, archlich, dracolich
+skeleton list => skeleton, skeleton warrior, skeleton mage, skeleton knight, skeleton general, skeletal beast, skeletal demon, skeletal dragon
+ghost list => dead spirit, ghost, fallen spirit, corrupted spirit
+specter list => specter, wraith, fantom, poltergheist, animal specter, divine specter
+
+demon list :
+demonic beast => demonic animal (choose species), 
+lesser demon => imp, great imp, 
+medium demon => 
+greater demon => 
+high demon => 
+lords => 
+archdemon => 
+
+spirit list :
+elemental => nymph, djinn, 
+magic => djinn, 
+divine => djinn (named), Sylphide (wind), Callypso (water), Ifrit (fire), 
+
+slimy list :
+slime => slime (base), glutton slime, plant slime, carrion slime, poison slime, rocky slime, metal slime, crytal slime (base slime but can harden to protect itself),
+mana slime (mana fluid charged base slime)
+mud => animated mud, muddy corpse (undead too)
+gel => 
+
+beast list :
+animal => 
+deformed animal => 
+animal spirit => 
+
+insectoid list :
+flying => 
+creeping => 
+digging => 
+
+vegetal list :
+plants => carnivorous plant, 
+plant spirit => 
+
+dragon list :
+wyvern => 
+real dragon => 
+draconoid (small dragons or manlike dragons who cannot talk) => 
+dracohuman (diluted blooded dragons with humans) => 
+
+for cities towns and villages :
+make dictionnaries with few characteristics, as name, country, continent, chief or mayor name, specialty (like a food, drink, type of cloth...)...
+...environment type (when hardcoded - will see to use cardinal directions for procedurally generated ones, or select environmeent before to assign after)...
+...type : village, town, city, or capital
+make new lists in order to randomly assign those when procedurally generated
+do double lists : one for only name, for story purposes ; the other for the entire definition and template
+
+*************************************************************************
+
+STATS :
+
+main :
+
+add char stats => strength, dexterity, agility, vitality, energy, luck => dictionary ?
+add regeneration for life, stamina and mana, based on class or monster species/type
+notes :
+=> for certain monsters life regen is not 0 (vampire ?)
+=> life regen might be negative for some undead
+
+secondary :
+
+speed
+masteries : weapons, armors, magic
+
+derived :
+
+flee factor => from agility
+power => strength + weapon mastery + wweapon damage + skills + bonus
+defense => armor mastery + skills + bonus

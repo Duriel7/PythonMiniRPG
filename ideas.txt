@@ -1,11 +1,64 @@
 features :
 
 make different areas for start
-merchant
-make flee chance dependent on mob with a parameter
-make quests
+random merchants
+make flee chance dependent on mob with a parameter (eg : speed or agility) + stamina left
+make quests procedurally generated
+make floors for the dungeon with floor bosses
+make semi random champions and elites spawns
+make around village exploration richer, find items, encounter merchants, being ambushed
+make choices done by key presses instead of typing a enter each time
+randomize some properties like power or health points
+make undead monsters have a living state instead of a specific species => abiity for damage types to be efficient against undead + original species
+find a way to use ranks but differenciate numeral ranks from letter ranks
+make a random name (composed of syllabs) engine for village names
+make defined major NPC in a list but make random npc register by characters so it randomizes for every player
+add a tag system to make specific damage easier : dictionary of tags inside the dictionary of each template and definition
+maybe : include exchange between characters if possible
+
+save feature :
+save the boolean for creation and feeding of databases => python file or external file ?
+save characters by player and one folder containing all the save file for each player
+
+exploration feature :
+integration wanted : exploration => combat OR merchant OR find item OR find place OR find tumb with epitaphs or items...
 make a small random to have events playing in the dungeon such as find an item, see a monster and decide to attack or not, find a chest, a hidden way, or a trap
+make a counter in case randomness chooses too many times in a row the same monster (store monster name, increment counter, if counter > x then choose another monster)
+OR implement dictionaries to have monster frequencies
+OR keep the list and make a dictionary with a zip against a list of frequencies
+make environment types have a certain difficulty factor : for monsters that appear and climatic events like sandstorms or snow storms, floods... for random funny events
+hardcoded dungeons are handplaced into the world, but procedurally generated ones can appear virtually anywhere
+
+combat feature :
+make combat decisions based on character class
+make subfunctions for combat turns so I can decide for initiative from the player or from the monster
+make another function for choosen combat when the exploration function gives the monster itself, which will call subfunctions
+make an arena system with opponent lists (raised monsters, human classes) with another combat function called arena
+make a combat loop or partial loop for the arena to be able to alter coins and XP gains
+humans have a specific arena characteristic for coins because there will be clandestine arena battles in the wild
+
+death handling feature :
+if resurrection function called, it will handle XP and coin losses and resurrect player at 50% life
+if not called, ironman mode is activated, and that character is deleted from memory
+
+npc feature :
+random npc : names, surnames, nicknames, origin (country, continent, city), specialization (job, class), personalities
+make dictionaries for each characteristic
+
+statistics feature :
+add stats to character templates and definitions
+differenciate main and secondary stats
+derived stats formulas => 
+
+classes feature :
+make classes real dictionnaries to choose from
+each class will call it's own definition and template upon choice
+
+transform :
+dungeon function to have choice which then leads to other functions
+exploration function to be different depending on environment around villages
+
+final before continuing dev :
+=> separate functions into files : done for database !
 
 debug :
-
-find why the global variable doesn't work for the save of player's data when going out an in the dungeon

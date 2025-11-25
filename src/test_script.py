@@ -1,73 +1,17 @@
-import random, math, sys, sqlite3
+import random, math, sys, copy
+from database_connection import dbconnect, dbcursor, dberror, dbclose
+from database_feed import *
+from lists import *
 
 try:
-    #Connection to database
-    connection = sqlite3.connect('database/RPG_Database.db')
-    cursor = connection.cursor()
 
-    #Database tables creation functions
-    def databaseSaves():
-        
-        #Create saves table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS saves(
-                id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-                characterName TEXT,
-                characterLevel INTEGER,
-                characterXP INTEGER
-            )
-        """)
-        connection.commit()
-    
-    def databaseItems():
-        pass
+    dbconnect()
+    dbcursor()
 
-    def databaseWeapons():
-        
-        #Create weapons table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS weapons(
-                id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-                weaponName TEXT,
-                weaponType TEXT,
-                weaponRank TEXT,
-                weaponLevel INTEGER,
-                weaponPrice INTEGER
-            )
-        """)
-        connection.commit()
-        
-    def databaseArmors():
-        
-        #Create armors table
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS armors(
-                id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-                armorName TEXT,
-                armorType TEXT,
-                armorRank TEXT,
-                armorLevel INTEGER,
-                armorPrice INTEGER
-            )
-        """)
-        connection.commit()
-
-    def databasePotions():
-        pass
-
-    def databaseIngredients():
-        pass
-
-    def databaseMonsters():
-        pass
-
-    #Database tables update functions
-    def databaseSaveCreation():
-        pass
-
-    #Global check variable
+    #Global check variables
     characterCheck = False
     combatCheck = False
+    explorationCheck = False
     playCheck = True
     villageCheck = True
     dungeonCheck = True
@@ -147,7 +91,6 @@ try:
         return player
 
     #Define monsters
-    mobList = []
 
     goblin = {}
     goblin['Type'] = "Goblinoid"
@@ -205,6 +148,108 @@ try:
             print("Not a good choice")
     #Death function end
 
+    #Exploration function
+    def explorationLoop(character):
+    
+        #Global variables
+        global explorationCheck
+        global player
+
+        #Initializing player variable
+        player = character
+
+        while explorationCheck == True:
+
+            #Initializing random numbers for events purpose
+            explorationRandom = random.randint(0, 5)
+
+            #Declare variables for exploration
+            choice = 0
+            explo = 1 + explorationRandom
+
+            if explo == 1:
+                #Find an item
+                print("You stumble upon an item on the floor, what is that ?")
+                #make lists : 
+                #one list for all item where the only property is type : weapon, armor, aid...
+                #another one for each item type with according properties
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                    village()
+                else:
+                    explorationCheck = False
+                    village()
+            elif explo == 2:
+                #Monster ambush
+                monster = random.choice(mobList).copy()
+                print("You are ambushed by a ", monster['Name'], " !")
+                combatLoop(player, monster)
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                    village()
+                else:
+                    explorationCheck = False
+                    village()
+            elif explo == 3:
+                #See a monster from a distance
+                monster = random.choice(mobList).copy()
+                print("You see a monster, but it does not seem to see you, it appears to be a ", monster['Name'])
+                choice = int(input("Do you wish to fight this ", monster['Name'], " Yes (1), No (2) ?"))
+                if choice == 1:
+                    combatLoop(player, monster)
+                elif choice == 2:
+                    choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                    if choice == 1:
+                        explorationLoop(player)
+                    elif choice == 2:
+                        explorationCheck = False
+                        village()
+                    else:
+                        explorationCheck = False
+                        village()
+                else:
+                    print("Wrong choice, continuig exploration...")
+                    explorationLoop(player)
+            elif explo == 4:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                    village()
+                else:
+                    explorationCheck = False
+                    village()
+            elif explo == 5:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                    village()
+                else:
+                    explorationCheck = False
+                    village()
+            elif explo == 6:
+                choice = int(input("Continue exploring (1) or go out (2) ?\n"))
+                if choice == 1:
+                    explorationLoop(player)
+                elif choice == 2:
+                    explorationCheck = False
+                    village()
+                else:
+                    explorationCheck = False
+                    village()
+
+        
+    #Exploration function end
+    
     #Combat function
     def combatLoop(character, monster):
 
@@ -559,6 +604,11 @@ try:
             village()
     #Church end
 
+    #Resurrection function
+    def resurrection(character):
+        pass
+    #End of resurrection function
+
     #Function for rumors
     def rumors():
         pass
@@ -575,7 +625,25 @@ try:
     #Rest end
 
     #Dungeon function
+    def exploration(character):
+
+        #Resetting global combat checker
+        global explorationCheck
+        explorationCheck = True
+
+        while explorationCheck == True:
+            exploration(character)
+        
+        return character
+
+    #Dongeon function end
+
+    #Dungeon function
     def dungeon(character):
+
+        #Resetting global combat checker
+        global combatCheck
+        combatCheck = False
 
         while combatCheck == False:
             combatLoop(character, mobList)
@@ -614,6 +682,7 @@ try:
     def game():
         
         #Call database functions
+        #put these in a conditional choice depending on if they have been made or not within the save file
         databaseSaves()
         databaseWeapons()
         databaseArmors()
@@ -638,7 +707,8 @@ try:
             if choice == 1:
                 village()
             elif choice == 2:
-                pass
+                print("You go for a little tour around the plains...")
+                exploration(character)
             elif choice == 3:
                 print("Be cautious exploring the dungeon...")
                 dungeon(character)
@@ -657,8 +727,7 @@ try:
     game()
 
 except Exception as error:
-    print("Error ", error)
-    connection.rollback()
+    dberror(error)
 
 finally:
-    connection.close()
+    dbclose()
