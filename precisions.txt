@@ -37,14 +37,15 @@ divine => djinn (named), Sylphide (wind), Callypso (water), Ifrit (fire),
 
 slimy list :
 slime => slime (base), glutton slime, plant slime, carrion slime, poison slime, rocky slime, metal slime, crytal slime (base slime but can harden to protect itself),
-mana slime (mana fluid charged base slime)
-mud => animated mud, muddy corpse (undead too)
+mana slime (mana fluid charged base slime) => 
+mud => animated mud, muddy corpse (undead too), 
 gel => 
 
 beast list :
 animal => 
 deformed animal => 
 animal spirit => 
+divine animal => Gryphin, Manticore, Chimera, 
 
 insectoid list :
 flying => 
@@ -86,6 +87,7 @@ speed
 masteries : weapons, armors, magic
 
 derived :
+avoid
 
 flee factor => from agility
 power => strength + weapon mastery + wweapon damage + skills + bonus

@@ -36,6 +36,7 @@ make another function for choosen combat when the exploration function gives the
 make an arena system with opponent lists (raised monsters, human classes) with another combat function called arena
 make a combat loop or partial loop for the arena to be able to alter coins and XP gains
 humans have a specific arena characteristic for coins because there will be clandestine arena battles in the wild
+make an avoid combat turn that multiplies avoid stat by 5
 
 death handling feature :
 if resurrection function called, it will handle XP and coin losses and resurrect player at 50% life
